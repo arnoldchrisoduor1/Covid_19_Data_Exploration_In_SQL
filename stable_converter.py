@@ -7,8 +7,8 @@ def enclose_values_in_brackets(input_file):
             rows = []
             for row in reader:
                 quoted_values = [f"'{value}'" for value in row]
-                rows.append('('.join(quoted_values) + ')')  # Enclose each row in brackets
-            print(',\n'.join(rows))  # Separate multiple rows with a comma and a newline
+                rows.append('(' + ', '.join(quoted_values) + ')')
+            print(','.join(rows))  # Separate multiple rows with a comma
     except FileNotFoundError:
         print(f"The file '{input_file}' was not found.")
 
